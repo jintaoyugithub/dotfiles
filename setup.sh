@@ -75,15 +75,16 @@ elif [[ "$OS" == "Linux" ]]; then
   sudo apt install -y unzip curl fontconfig build-essential
   sudo apt install tmux git fzf ripgrep
 
+  # zoxide
+  # require rust
+  # curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
   # neovim
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
   sudo rm -rf /opt/nvim-linux-x86_64
   sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-  export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+  echo 'PATH="$PATH:/opt/nvim-linux-x86_64/bin"' >> ~/.zshrc
   sudo rm nvim-linux-x86_64.tar.gz
-
-  # zoxide
-  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
   # symlink farm manager
   if ! check_available stow; then
@@ -110,6 +111,7 @@ elif [[ "$OS" == "Linux" ]]; then
   chsh -s $(which zsh)
   # This command shouldn't be run in sudo mode
   exec zsh
+  # source ~/.zshrc
 
 else
   echo "doesn't support current system"
