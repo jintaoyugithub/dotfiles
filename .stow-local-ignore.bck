@@ -1,0 +1,3 @@
+# files that you want to stow to ignore
+# Note: this will override the default one, make sure you have all the files you
+# want to ignore in this file
