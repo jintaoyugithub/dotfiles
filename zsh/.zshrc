@@ -44,7 +44,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # disable case sensitive
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # -- Snippets --
 # check https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
@@ -86,4 +86,5 @@ VULKAN_SDK="$HOME/VulkanSDK/1.4.304.0"
 
 # -- Shell integrations --
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
+PATH="$PATH:/opt/nvim-linux-x86_64/bin"

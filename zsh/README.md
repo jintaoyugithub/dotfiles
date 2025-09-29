@@ -8,3 +8,4 @@
 | <C-p> | Moving cmd history backward |
 | <C-n> | Moving cmd history forward |
 | <C-r> | Enable history cmd search   |
+
