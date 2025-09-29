@@ -79,13 +79,6 @@ elif [[ "$OS" == "Linux" ]]; then
   # require rust
   # curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
-  # neovim
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-  sudo rm -rf /opt/nvim-linux-x86_64
-  sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-  echo 'PATH="$PATH:/opt/nvim-linux-x86_64/bin"' >> ~/.zshrc
-  sudo rm nvim-linux-x86_64.tar.gz
-
   # symlink farm manager
   if ! check_available stow; then
     echo "Installing stow"
@@ -100,6 +93,13 @@ elif [[ "$OS" == "Linux" ]]; then
   # install nerd fonts
   install_nerd_font ${HOME}/.fonts JetBrainsMono
 
+  # neovim
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+  sudo rm -rf /opt/nvim-linux-x86_64
+  sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+  echo 'PATH="$PATH:/opt/nvim-linux-x86_64/bin"' >> ~/.zshrc
+  sudo rm nvim-linux-x86_64.tar.gz
+
   if ! check_available zsh; then
     echo "Installing zsh"
     sudo apt install -y zsh
@@ -112,6 +112,8 @@ elif [[ "$OS" == "Linux" ]]; then
   # This command shouldn't be run in sudo mode
   exec zsh
   # source ~/.zshrc
+  
+  # TODO: run clean_plugins and install_plugins in tpm/bin floder
 
 else
   echo "doesn't support current system"
