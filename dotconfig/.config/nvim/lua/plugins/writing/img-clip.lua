@@ -6,15 +6,16 @@ return {
         -- or leave it empty to use the default settings
 
         -- specific for obsidian project
-        dirs = {
-            ["$HOME/vaults/"] = {
-                -- default dir is assets/dir_path
-                dir_path = "imgs/"
-            },
+        -- dirs = {
+        --     ["$HOME/vaults/"] = {
+        --         -- default dir is assets/dir_path
+        --         dir_path = "imgs/"
+        --     },
+        -- },
+        
+        default = {
+          dir_path = "assets/imgs"
         },
-    },
-
-    default = {
     },
 
     keys = {

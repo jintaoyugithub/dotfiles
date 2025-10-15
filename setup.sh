@@ -73,7 +73,7 @@ elif [[ "$OS" == "Linux" ]]; then
 
   sudo apt update && sudo apt upgrade
   sudo apt install -y unzip curl fontconfig build-essential
-  sudo apt install tmux git fzf ripgrep
+  sudo apt install tmux git fzf ripgrep wl-clipboard
 
   # zoxide
   # require rust
