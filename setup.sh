@@ -31,14 +31,14 @@ install_nerd_font() {
 
   mkdir -p "${installed_path}"
 
-  curl -L -o /tmp/${name}.zip "$url"
+  sudo curl -L -o /tmp/${name}.zip "$url"
 
   # unzip into fonts folder
-  unzip -o /tmp/${name}.zip -d "$installed_path"
+  sudo unzip -o /tmp/${name}.zip -d "$installed_path"
 
   # rebuild font cache (linux only)
   if check_available fc-cache; then
-    fc-cache -fv ~/.fonts
+    sudo fc-cache -fv ~/.fonts
   fi
 
   echo "${name} installed!"
@@ -94,7 +94,7 @@ elif [[ "$OS" == "Linux" ]]; then
   install_nerd_font ${HOME}/.fonts JetBrainsMono
 
   # neovim
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+  sudo curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
   sudo rm -rf /opt/nvim-linux-x86_64
   sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
   echo 'PATH="$PATH:/opt/nvim-linux-x86_64/bin"' >> ~/.zshrc
